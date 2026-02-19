@@ -71,8 +71,7 @@ By leveraging unsupervised clustering (kMedoids/kMeans), this tool classifies tr
 
   #### Argument Reference
 
-  * Argument	Default	Description
-
+  Argument	Default	Description
     <table style="width:100%; border-collapse: collapse; margin-top: 20px; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5;">
   <thead>
     <tr style="background-color: #2c3e50; color: #ffffff; text-align: left;">
@@ -128,27 +127,27 @@ By leveraging unsupervised clustering (kMedoids/kMeans), this tool classifies tr
 
 ## 🧬 Methodology
 
-  1. Optimal K Selection
+    1. Optimal K Selection
 
-      The tool runs clustering across the specified range [kmin,kmax]. It calculates the Silhouette Score for each k.
-      
-      To ensure the most biological result, it selects the smallest k that achieves a score within 0.02 of the global maximum. If the maximum score is below 0.3, the tool treats the data as a single cluster (unimodal).
+        The tool runs clustering across the specified range [kmin,kmax]. It calculates the Silhouette Score for each k.
+        
+        To ensure the most biological result, it selects the smallest k that achieves a score within 0.02 of the global maximum. If the maximum score is below 0.3, the tool treats the data as a single cluster (unimodal).
 
-  2. Homology Inference Logic
+    2. Homology Inference Logic
 
-      The tool groups transcripts into clusters and identifies a Medoid (the most representative transcript) for each group. Relationships are then defined:
+        The tool groups transcripts into clusters and identifies a Medoid (the most representative transcript) for each group. Relationships are then defined:
 
-      Primary Orthologs: Transcripts from different genes that are the "closest" to each other within a cluster.
+        Primary Orthologs: Transcripts from different genes that are the "closest" to each other within a cluster.
 
-      Ortho-isoorthologs: Primary pairs linked via a Speciation event in the tree.
+        Ortho-isoorthologs: Primary pairs linked via a Speciation event in the tree.
 
-      Para-isoorthologs: Primary pairs linked via a Duplication event in the tree.
+        Para-isoorthologs: Primary pairs linked via a Duplication event in the tree.
 
-      Recent Paralogs: Transcripts from the same gene found within the same cluster.
+        Recent Paralogs: Transcripts from the same gene found within the same cluster.
 
 
 
-### 📊 Output
+## 📊 Output
 * The tool generates an ortholog_report.xlsx file.
 
 <table style="width:100%; border-collapse: collapse; margin-top: 20px; font-family: Arial, sans-serif;">
@@ -180,8 +179,9 @@ By leveraging unsupervised clustering (kMedoids/kMeans), this tool classifies tr
 
 * Additionaly a clustering_report_best_k_{best_k}.tsv file is generated.
 
+
 <div style="font-family: sans-serif; padding: 20px; color: #333; line-height: 1.5;">
-  <h3 style="border-bottom: 1px solid #ddd; padding-bottom: 8px;">Acknowledgements</h3>
+  <h2 style="border-bottom: 1px solid #ddd; padding-bottom: 8px;">Acknowledgements</h2>
   
   <p style="font-size: 0.95em; color: #555;">
     This project is powered by the following open-source libraries:
