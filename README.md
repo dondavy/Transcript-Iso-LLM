@@ -126,25 +126,25 @@ By leveraging unsupervised clustering (kMedoids/kMeans), this tool classifies tr
 </table>
 
 
-  ## 🧬 Methodology
-  
-    1. Optimal K Selection
+## 🧬 Methodology
 
-        The tool runs clustering across the specified range [kmin,kmax]. It calculates the Silhouette Score for each k.
-        
-        To ensure the most biological result, it selects the smallest k that achieves a score within 0.02 of the global maximum. If the maximum score is below 0.3, the tool treats the data as a single cluster (unimodal).
+  1. Optimal K Selection
 
-    2. Homology Inference Logic
+      The tool runs clustering across the specified range [kmin,kmax]. It calculates the Silhouette Score for each k.
+      
+      To ensure the most biological result, it selects the smallest k that achieves a score within 0.02 of the global maximum. If the maximum score is below 0.3, the tool treats the data as a single cluster (unimodal).
 
-        The tool groups transcripts into clusters and identifies a Medoid (the most representative transcript) for each group. Relationships are then defined:
+  2. Homology Inference Logic
 
-        Primary Orthologs: Transcripts from different genes that are the "closest" to each other within a cluster.
+      The tool groups transcripts into clusters and identifies a Medoid (the most representative transcript) for each group. Relationships are then defined:
 
-        Ortho-isoorthologs: Primary pairs linked via a Speciation event in the tree.
+      Primary Orthologs: Transcripts from different genes that are the "closest" to each other within a cluster.
 
-        Para-isoorthologs: Primary pairs linked via a Duplication event in the tree.
+      Ortho-isoorthologs: Primary pairs linked via a Speciation event in the tree.
 
-        Recent Paralogs: Transcripts from the same gene found within the same cluster.
+      Para-isoorthologs: Primary pairs linked via a Duplication event in the tree.
+
+      Recent Paralogs: Transcripts from the same gene found within the same cluster.
 
 
 
