@@ -58,14 +58,59 @@ You will need Python 3.8+ and the following libraries:
 
   * Argument	Default	Description
 
-    * --tree	Required	Path to the NHX gene tree file.
-    *  --source2target	Required	Path to the Transcript-to-Gene TSV mapping.
-    *  --embedding_path	Required	Directory containing the .npy embedding files.
-    *  --clustering_algorithm	kMedoids	kMedoids (recommended for Cosine) or kMeans.
-    * --distance_metric	Cosine	Cosine or Euclidean.
-    * --cluster_resolution_min	2	Minimum k for the Silhouette heuristic.
-    * --cluster_resolution_max	30	Maximum k for the Silhouette heuristic.
-    * --output_path	.	Directory where the final Excel report will be saved.
+    <table style="width:100%; border-collapse: collapse; margin-top: 20px; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5;">
+  <thead>
+    <tr style="background-color: #2c3e50; color: #ffffff; text-align: left;">
+      <th style="padding: 12px; border: 1px solid #ddd;">Argument</th>
+      <th style="padding: 12px; border: 1px solid #ddd;">Default</th>
+      <th style="padding: 12px; border: 1px solid #ddd;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: #f9f9f9;">
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>--tree</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;"><strong>Required</strong></td>
+      <td style="padding: 12px; border: 1px solid #ddd;">Path to the NHX gene tree file.</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>--source2target</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;"><strong>Required</strong></td>
+      <td style="padding: 12px; border: 1px solid #ddd;">Path to the Transcript-to-Gene TSV mapping.</td>
+    </tr>
+    <tr style="background-color: #f9f9f9;">
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>--embedding_path</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;"><strong>Required</strong></td>
+      <td style="padding: 12px; border: 1px solid #ddd;">Directory containing the <code>.npy</code> embedding files.</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>--clustering_algorithm</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>kMedoids</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>kMedoids</code> (recommended for Cosine) or <code>kMeans</code>.</td>
+    </tr>
+    <tr style="background-color: #f9f9f9;">
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>--distance_metric</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>Cosine</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>Cosine</code> or <code>Euclidean</code>.</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>--cluster_resolution_min</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>2</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;">Minimum <em>k</em> for the Silhouette heuristic.</td>
+    </tr>
+    <tr style="background-color: #f9f9f9;">
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>--cluster_resolution_max</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>30</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;">Maximum <em>k</em> for the Silhouette heuristic.</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>--output_path</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;"><code>.</code></td>
+      <td style="padding: 12px; border: 1px solid #ddd;">Directory where the final Excel report will be saved.</td>
+    </tr>
+  </tbody>
+</table>
+
+
   🧬 Methodology
   1. Optimal K Selection
 
@@ -96,8 +141,29 @@ Recent Paralogs: Transcripts from the same gene found within the same cluster.
 ### 📊 Output
 The tool generates an ortholog_report.xlsx file.
 
-#### Column	Description
-* tr_a / tr_b	The pair of transcript IDs being compared.
-* gene_a / gene_b	The corresponding Gene IDs from the mapping file.
-* relation	The specific homologous relationship (e.g., ortho-isoorthologs).
-* type	The broad category (primary orthologs vs secondary orthologs).
+<table style="width:100%; border-collapse: collapse; margin-top: 20px; font-family: Arial, sans-serif;">
+  <thead>
+    <tr style="background-color: #f2f2f2; text-align: left;">
+      <th style="padding: 12px; border: 1px solid #ddd;">Column</th>
+      <th style="padding: 12px; border: 1px solid #ddd;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ddd;"><strong>tr_a / tr_b</strong></td>
+      <td style="padding: 12px; border: 1px solid #ddd;">The pair of transcript IDs being compared.</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ddd;"><strong>gene_a / gene_b</strong></td>
+      <td style="padding: 12px; border: 1px solid #ddd;">The corresponding Gene IDs from the mapping file.</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ddd;"><strong>relation</strong></td>
+      <td style="padding: 12px; border: 1px solid #ddd;">The specific biological relationship (e.g., <code>ortho-isoorthologs</code>).</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #ddd;"><strong>type</strong></td>
+      <td style="padding: 12px; border: 1px solid #ddd;">The broad category (<code>primary orthologs</code> vs <code>secondary orthologs</code>).</td>
+    </tr>
+  </tbody>
+</table>
