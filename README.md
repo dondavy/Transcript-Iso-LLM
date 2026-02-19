@@ -25,14 +25,11 @@ By leveraging unsupervised clustering (kMedoids/kMeans), this tool classifies tr
 #### Environment Setup
 
 <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1000px;">
-  <h4 style="color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 5px;">#### Environment Setup</h4>
   
   <p>You will need <strong>Python 3.8+</strong> and the following libraries installed in your environment:</p>
 
   <div style="background-color: #282c34; border-radius: 6px; padding: 15px; margin: 15px 0; overflow-x: auto;">
-    <code style="color: #abb2bf; font-family: 'Courier New', Courier, monospace; font-size: 14px;">
-      <span style="color: #d19a66;">pip</span> install numpy pandas scikit-learn scikit-learn-extra ete3 openpyxl
-    </code>
+    <code style="color: #abb2bf; font-family: 'Courier New', Courier, monospace; font-size: 14px;"><span style="color: #d19a66;">pip</span> install numpy pandas scikit-learn scikit-learn-extra ete3 openpyxl</code>
   </div>
 
   <h5 style="color: #2c3e50; margin-bottom: 10px;">Key Library Roles:</h5>
