@@ -10,25 +10,44 @@
 
 A framework designed to infer high-resolution homology relationships between transcripts by combining protein/gene embeddings with gene homology relations.
 
-By leveraging unsupervised clustering (kMedoids/kMeans) and Direct Coupling Analysis logic, this tool classifies transcript pairs into specific categories like ortho-isoorthologs, para-isoorthologs, and recent paralogs.
+By leveraging unsupervised clustering (kMedoids/kMeans), this tool classifies transcript pairs into specific categories like ortho-isoorthologs, para-isoorthologs, and recent paralogs.
 
 ## 🚀 Key Features
-Automated Clustering: Automatically selects the optimal number of clusters (k) using Silhouette Score heuristics and the principle of parsimony.
+ * Automated Clustering: Automatically selects the optimal number of clusters (k) using Silhouette Score heuristics and the principle of parsimony.
 
-Evolutionary Context: Integrates NHX gene trees to distinguish between speciation and duplication events.
+ * Evolutionary Context: Integrates NHX gene trees to distinguish between speciation and duplication events.
 
-Embedding Support: Works with any 1D numpy-based embeddings (e.g., ProtBert, ESM-2).
+ * Embedding Support: Works with any 1D numpy-based embeddings (e.g., ProtT5, ESM-2).
 
-Flexible Metrics: Supports both Cosine and Euclidean distance metrics for high-dimensional similarity.
+ * Flexible Metrics: Supports both Cosine and Euclidean distance metrics for high-dimensional similarity.
 
 ## 🛠 Prerequisites
 #### Environment Setup
 
-You will need Python 3.8+ and the following libraries:
+<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1000px;">
+  <h4 style="color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 5px;">#### Environment Setup</h4>
+  
+  <p>You will need <strong>Python 3.8+</strong> and the following libraries installed in your environment:</p>
 
-  <code>
-    pip install numpy pandas scikit-learn scikit-learn-extra ete3 openpyxl
-  </code>
+  <div style="background-color: #282c34; border-radius: 6px; padding: 15px; margin: 15px 0; overflow-x: auto;">
+    <code style="color: #abb2bf; font-family: 'Courier New', Courier, monospace; font-size: 14px;">
+      <span style="color: #d19a66;">pip</span> install numpy pandas scikit-learn scikit-learn-extra ete3 openpyxl
+    </code>
+  </div>
+
+  <h5 style="color: #2c3e50; margin-bottom: 10px;">Key Library Roles:</h5>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 8px; padding-left: 15px; border-left: 3px solid #3498db;">
+      <strong>ete3:</strong> Used for parsing the NHX gene trees and identifying evolutionary events.
+    </li>
+    <li style="margin-bottom: 8px; padding-left: 15px; border-left: 3px solid #3498db;">
+      <strong>scikit-learn-extra:</strong> Required specifically for the <code>kMedoids</code> algorithm.
+    </li>
+    <li style="margin-bottom: 8px; padding-left: 15px; border-left: 3px solid #3498db;">
+      <strong>openpyxl:</strong> Necessary for exporting the final homology report to Excel format.
+    </li>
+  </ul>
+</div>
 
 #### Required Input Files
 
